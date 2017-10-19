@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- Angular scope and module -->
+<html ng-app="myApp">
+<head>
+  <!-- Angular script -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script>
+    angular.module('myApp', [])
+      .controller("MyController", MyController)
+      .controller("MySecondController", MySecondController)
+    
+    function MyController() {
+      var vm = this;
+      vm.name =  'John';
+    }
+    function MySecondController() {
+      var vm = this;
+      vm.name =  'F.';
+    }
+  </script>
+</head>
+<body>
+  <div ng-controller="MyController as MyCtrl">
+    <div ng-controller="MySecondController as MySecondCtrl">
+    {{MyCtrl.name}}
+    {{MySecondCtrl.name}}
+  </div>
+  </div>
+</body>
+</html>
